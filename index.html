@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>X&O</title>
+  <link rel='stylesheet' href='style.css'>
+
+</head>
+   
+ <body>
+ <p><p>
+ <div id='message'>Ход игрока X.</div>
+ <div class='mother'>
+<div class='quad' id='q0'></div>
+<div class='quad' id='q1'></div>
+<div class='quad' id='q2'></div>
+  
+<div class='quad' id='q3'></div>
+<div class='quad' id='q4'></div>
+<div class='quad' id='q5'></div>
+ 
+<div class='quad' id='q6'></div>
+<div class='quad' id='q7'></div>
+<div class='quad' id='q8'></div>
+</div>
+<p>
+<div id='attent'></div>
+<p>
+<div class='btn' id='rebtn' onclick='restart_game()'>Перезапустить игру</div>
+<p>
+<div id='admin'>Created by <em>sicutaviam</em>. Version 0.4</div>
+<script>
+var turn = 0;
+var quads = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+var isClickable = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+var attention = document.getElementById('attent');
+var mes = document.getElementById('message');
+var $0 = document.getElementById('q0');
+var $1 = document.getElementById('q1');
+var $2 = document.getElementById('q2');
+var $3 = document.getElementById('q3');
+var $4 = document.getElementById('q4');
+var $5 = document.getElementById('q5');
+var $6 = document.getElementById('q6');
+var $7 = document.getElementById('q7');
+var $8 = document.getElementById('q8');
+var isGame = true;
+		function Update(){
+			if ((quads[0]==2&&quads[3]==2&&quads[6]==2)||(quads[1]==2&&quads[4]==2&&quads[7]==2)||(quads[2]==2&&quads[5]==2&&quads[8]==2)||(quads[3]==2&&quads[4]==2&&quads[5]==2)||(quads[6]==2&&quads[7]==2&&quads[8]==2)||(quads[0]==2&&quads[1]==2&&quads[2]==2)||(quads[0]==2&&quads[4]==2&&quads[8]==2)||(quads[2]==2&&quads[4]==2&&quads[6]==2)){
+				attention.textContent='ИГРОК НОМЕР 2 ПОБЕДИЛ!';
+				isGame = false;
+			}
+			if ((quads[0]==1&&quads[3]==1&&quads[6]==1)||(quads[1]==1&&quads[4]==1&&quads[7]==1)||(quads[2]==1&&quads[5]==1&&quads[8]==1)||(quads[3]==1&&quads[4]==1&&quads[5]==1)||(quads[6]==1&&quads[7]==1&&quads[8]==1)||(quads[0]==1&&quads[1]==1&&quads[2]==1)||(quads[0]==1&&quads[4]==1&&quads[8]==1)||(quads[2]==1&&quads[4]==1&&quads[6]==1)){
+				attention.textContent='ИГРОК НОМЕР 1 ПОБЕДИЛ!';
+				isGame = false;
+			}
+			if (isClickable[0]==1&&isClickable[1]==1&&isClickable[2]==1&&isClickable[3]==1&&isClickable[4]==1&&isClickable[5]==1&&isClickable[6]==1&&isClickable[7]==1&&isClickable[8]==1&&isGame==true){
+			attention.textContent='НИЧЬЯ';
+			isGame = false;
+			}
+		}
+	$0.onclick = function (){
+		if(turn==0&&isClickable[0]==0&&isGame){
+			$0.textContent = "X";
+			quads[0] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[0]=1;
+		} 
+		if (turn==1&&isClickable[0]==0) {
+			$0.textContent = "O";
+			quads[0] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[0]=1;
+		}
+		Update();
+	}
+	$1.onclick = function (){
+		if(turn==0&&isClickable[1]==0&&isGame){
+			$1.textContent = "X";
+			quads[1] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[1]=1;
+		} 
+		if (turn==1&&isClickable[1]==0) {
+			$1.textContent = "O";
+			quads[1] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[1]=1;
+		}
+		Update();
+	}
+	$2.onclick = function (){
+		if(turn==0&&isClickable[2]==0&&isGame){
+			$2.textContent = "X";
+			quads[2] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[2]=1;
+		} 
+		if (turn==1&&isClickable[2]==0) {
+			$2.textContent = "O";
+			quads[2] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[2]=1;
+		}
+		Update();
+	}
+	$3.onclick = function (){
+		if(turn==0&&isClickable[3]==0&&isGame){
+			$3.textContent = "X";
+			quads[3] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[3]=1;
+		} 
+		if (turn==1&&isClickable[3]==0) {
+			$3.textContent = "O";
+			quads[3] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[3]=1;
+		}
+		Update();
+	}
+	$4.onclick = function (){
+		if(turn==0&&isClickable[4]==0&&isGame){
+			$4.textContent = "X";
+			quads[4] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[4]=1;
+		} 
+		if (turn==1&&isClickable[4]==0) {
+			$4.textContent = "O";
+			quads[4] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[4]=1;
+		}
+		Update();
+	}
+	$5.onclick = function (){
+		if(turn==0&&isClickable[5]==0&&isGame){
+			$5.textContent = "X";
+			quads[5] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[5]=1;
+		} 
+		if (turn==1&&isClickable[5]==0) {
+			$5.textContent = "O";
+			quads[5] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[5]=1;
+		}
+		Update();
+	}
+	$6.onclick = function (){
+		if(turn==0&&isClickable[6]==0&&isGame){
+			$6.textContent = "X";
+			quads[6] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[6]=1;
+		} 
+		if (turn==1&&isClickable[6]==0) {
+			$6.textContent = "O";
+			quads[6] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[6]=1;
+		}
+		Update();
+	}
+	$7.onclick = function (){
+		if(turn==0&&isClickable[7]==0&&isGame){
+			$7.textContent = "X";
+			quads[7] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[7]=1;
+		} 
+		if (turn==1&&isClickable[7]==0) {
+			$7.textContent = "O";
+			quads[7] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[7]=1;
+		}
+		Update();
+	}
+	$8.onclick = function (){
+		if(turn==0&&isClickable[8]==0&&isGame){
+			$8.textContent = "X";
+			quads[8] = 1;
+			turn = 1;
+			mes.textContent = 'Ход игрока O.';
+			isClickable[8]=1;
+		} 
+		if (turn==1&&isClickable[8]==0) {
+			$8.textContent = "O";
+			quads[8] = 2;
+			turn = 0;
+			mes.textContent = 'Ход игрока X.';
+			isClickable[8]=1;
+		}
+		Update();
+	}
+		function restart_game(){
+		
+		window.location.reload();
+		}
+</script>
+ </body>
+</html>

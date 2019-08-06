@@ -47,11 +47,11 @@ var $8 = document.getElementById('q8');
 var isGame = true;
 		function Update(){
 			if ((quads[0]==2&&quads[3]==2&&quads[6]==2)||(quads[1]==2&&quads[4]==2&&quads[7]==2)||(quads[2]==2&&quads[5]==2&&quads[8]==2)||(quads[3]==2&&quads[4]==2&&quads[5]==2)||(quads[6]==2&&quads[7]==2&&quads[8]==2)||(quads[0]==2&&quads[1]==2&&quads[2]==2)||(quads[0]==2&&quads[4]==2&&quads[8]==2)||(quads[2]==2&&quads[4]==2&&quads[6]==2)){
-				attention.textContent='ИГРОК НОМЕР 2 ПОБЕДИЛ!';
+				attention.textContent='ИГРОК НОМЕР O ПОБЕДИЛ!';
 				isGame = false;
 			}
 			if ((quads[0]==1&&quads[3]==1&&quads[6]==1)||(quads[1]==1&&quads[4]==1&&quads[7]==1)||(quads[2]==1&&quads[5]==1&&quads[8]==1)||(quads[3]==1&&quads[4]==1&&quads[5]==1)||(quads[6]==1&&quads[7]==1&&quads[8]==1)||(quads[0]==1&&quads[1]==1&&quads[2]==1)||(quads[0]==1&&quads[4]==1&&quads[8]==1)||(quads[2]==1&&quads[4]==1&&quads[6]==1)){
-				attention.textContent='ИГРОК НОМЕР 1 ПОБЕДИЛ!';
+				attention.textContent='ИГРОК НОМЕР X ПОБЕДИЛ!';
 				isGame = false;
 			}
 			if (isClickable[0]==1&&isClickable[1]==1&&isClickable[2]==1&&isClickable[3]==1&&isClickable[4]==1&&isClickable[5]==1&&isClickable[6]==1&&isClickable[7]==1&&isClickable[8]==1&&isGame==true){
